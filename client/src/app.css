@@ -1,0 +1,644 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Hide number input spinners globally */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* ═══════════════════════════════════════════════════════════════
+   FIGHT CLUB — Dark Fantasy RPG Theme
+   ═══════════════════════════════════════════════════════════════ */
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #08080c;
+  color: #e8e6dc;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── Fantasy heading font ────────────────────────────────── */
+.font-fantasy { font-family: 'Cinzel', serif; }
+
+/* ─── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2520; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3d3530; }
+
+/* ─── Rarity Colors ───────────────────────────────────────── */
+.rarity-common    { color: #9ca3af; }
+.rarity-uncommon  { color: #4ade80; }
+.rarity-rare      { color: #60a5fa; text-shadow: 0 0 6px rgba(96,165,250,0.3); }
+.rarity-epic      { color: #c084fc; text-shadow: 0 0 8px rgba(192,132,252,0.4); }
+.rarity-legendary { color: #fbbf24; text-shadow: 0 0 12px rgba(251,191,36,0.5); font-weight: 700; }
+
+/* ─── Game panel ──────────────────────────────────────────── */
+.game-panel {
+  background: linear-gradient(180deg, #13110f 0%, #0e0c0a 100%);
+  border: 1px solid #2a2520;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.game-panel-header {
+  background: linear-gradient(90deg, #1a1510 0%, #201a14 50%, #1a1510 100%);
+  border-bottom: 1px solid #2a2520;
+  padding: 12px 16px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #e0b85c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ─── Game card (for monsters, items, etc) ─────────────────── */
+.game-card {
+  background: linear-gradient(135deg, #151210 0%, #0f0d0b 100%);
+  border: 1px solid #2a2520;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+.game-card:hover {
+  border-color: #3d3530;
+  background: linear-gradient(135deg, #1a1714 0%, #121010 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ─── Game button ─────────────────────────────────────────── */
+.btn-game {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+}
+.btn-fight {
+  background: linear-gradient(180deg, #b91c1c 0%, #7f1d1d 100%);
+  color: #fecaca;
+  border-color: #dc2626;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(185,28,28,0.3);
+}
+.btn-fight:hover {
+  background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%);
+  box-shadow: 0 4px 16px rgba(220,38,38,0.4);
+  transform: translateY(-1px);
+}
+.btn-gold {
+  background: linear-gradient(180deg, #a16207 0%, #713f12 100%);
+  color: #fef3c7;
+  border-color: #ca8a04;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(161,98,7,0.3);
+}
+.btn-gold:hover {
+  background: linear-gradient(180deg, #ca8a04 0%, #92400e 100%);
+  box-shadow: 0 4px 16px rgba(202,138,4,0.4);
+  transform: translateY(-1px);
+}
+.btn-dark {
+  background: linear-gradient(180deg, #1f1a16 0%, #151210 100%);
+  color: #a8a29e;
+  border-color: #2a2520;
+}
+.btn-dark:hover {
+  background: linear-gradient(180deg, #2a2520 0%, #1a1714 100%);
+  color: #d6d3d1;
+  border-color: #3d3530;
+}
+
+/* ─── HP / XP bars ────────────────────────────────────────── */
+.bar-hp {
+  background: #1a0808;
+  border: 1px solid #3d1515;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.bar-hp-fill {
+  background: linear-gradient(90deg, #991b1b, #dc2626, #ef4444);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 0 8px rgba(220,38,38,0.3);
+}
+.bar-xp {
+  background: #08101a;
+  border: 1px solid #15253d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.bar-xp-fill {
+  background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 0 8px rgba(59,130,246,0.3);
+}
+
+/* ─── Combat log ──────────────────────────────────────────── */
+.combat-log {
+  background: #0a0908;
+  border: 1px solid #1a1714;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.log-hit { color: #f87171; }
+.log-crit { color: #fbbf24; font-weight: 700; text-shadow: 0 0 6px rgba(251,191,36,0.3); }
+.log-miss { color: #4b5563; font-style: italic; }
+.log-block { color: #60a5fa; }
+.log-system { color: #4ade80; }
+.log-round {
+  color: #d4a853;
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+  border-top: 1px solid #1a1714;
+  margin-top: 6px;
+  padding-top: 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* ─── Combat arena ────────────────────────────────────────── */
+.combat-arena {
+  background: radial-gradient(ellipse at center, #1a1208 0%, #0a0908 70%);
+  border: 2px solid #3d2a15;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* ─── Zone selection buttons ──────────────────────────────── */
+.zone-btn {
+  padding: 12px 24px;
+  border: 2px solid #2a2520;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.15s;
+  background: linear-gradient(180deg, #1a1714 0%, #0f0d0b 100%);
+  color: #a8a29e;
+  min-width: 110px;
+}
+.zone-btn:hover {
+  border-color: #d4a853;
+  color: #d4a853;
+  background: linear-gradient(180deg, #201a14 0%, #151210 100%);
+}
+.zone-btn.zone-attack {
+  border-color: #dc2626;
+  background: linear-gradient(180deg, #2a1010 0%, #1a0808 100%);
+  color: #f87171;
+  box-shadow: 0 0 12px rgba(220,38,38,0.25), inset 0 0 12px rgba(220,38,38,0.1);
+}
+.zone-btn.zone-defend {
+  border-color: #3b82f6;
+  background: linear-gradient(180deg, #0a1a2a 0%, #081018 100%);
+  color: #60a5fa;
+  box-shadow: 0 0 12px rgba(59,130,246,0.25), inset 0 0 12px rgba(59,130,246,0.1);
+}
+
+/* ─── Notification toast ──────────────────────────────────── */
+@keyframes slideIn {
+  from { transform: translateX(100%) scale(0.95); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+@keyframes slideOut {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(-10px) scale(0.95); }
+}
+.toast {
+  animation: slideIn 0.3s ease, slideOut 0.4s ease 2.6s forwards;
+}
+
+/* ─── Glow pulse for important elements ───────────────────── */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(212,168,83,0.2); }
+  50% { box-shadow: 0 0 16px rgba(212,168,83,0.4); }
+}
+.glow-gold { animation: goldPulse 2s ease infinite; }
+
+@keyframes redPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(220,38,38,0.2); }
+  50% { box-shadow: 0 0 16px rgba(220,38,38,0.4); }
+}
+.glow-red { animation: redPulse 1.5s ease infinite; }
+
+/* ─── Quest progress bar ──────────────────────────────────── */
+.quest-bar {
+  background: #1a1714;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 6px;
+}
+.quest-bar-fill {
+  background: linear-gradient(90deg, #059669, #34d399);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* ─── Stat colors ─────────────────────────────────────────── */
+.stat-str { color: #f87171; }
+.stat-agi { color: #4ade80; }
+.stat-end { color: #fbbf24; }
+.stat-int { color: #60a5fa; }
+
+/* ─── Desktop sidebar ────────────────────────────────────── */
+.desktop-sidebar {
+  width: 200px;
+  transition: width 0.2s ease;
+}
+.desktop-sidebar.collapsed {
+  width: 52px;
+}
+.desktop-sidebar.collapsed .char-panel { padding: 8px 4px !important; }
+.desktop-sidebar.collapsed .nav-item { justify-content: center; padding: 8px 0; }
+.desktop-sidebar.collapsed .group-label { display: none; }
+
+.sidebar-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6px 8px;
+  border-bottom: 1px solid #1a1714;
+}
+.sidebar-toggle-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: none;
+  border: 1px solid #2a2520;
+  color: #78716c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.sidebar-toggle-btn:hover {
+  color: #d4a853;
+  border-color: #d4a853;
+}
+.toggle-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.group-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #4b5563;
+  padding: 10px 14px 4px;
+  font-weight: 700;
+}
+
+/* ─── Nav sidebar ─────────────────────────────────────────── */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: #8a8078;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.nav-item:hover {
+  color: #e2e0d6;
+  background: rgba(26,23,20,0.5);
+}
+.nav-item.active {
+  color: #d4a853;
+  background: linear-gradient(90deg, rgba(212,168,83,0.08) 0%, transparent 100%);
+  border-left-color: #d4a853;
+}
+.nav-icon {
+  font-size: 15px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.nav-badge {
+  background: #dc2626;
+  color: #fff;
+  font-size: 8px;
+  padding: 1px 4px;
+  border-radius: 6px;
+  margin-left: auto;
+  font-weight: 700;
+  min-width: 14px;
+  text-align: center;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #1a1714;
+  padding: 4px 0;
+}
+
+/* ─── Monster icon container ──────────────────────────────── */
+.monster-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: radial-gradient(circle, #1a1714 0%, #0a0908 100%);
+  border: 1px solid #2a2520;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* ─── Item icon ───────────────────────────────────────────── */
+.item-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: linear-gradient(135deg, #1a1714, #0f0d0b);
+  border: 1px solid #2a2520;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* ─── Background pattern ──────────────────────────────────── */
+.bg-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212,168,83,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(185,28,28,0.03) 0%, transparent 50%);
+}
+
+/* ─── Mobile chat drawer ──────────────────────────────────── */
+.mobile-chat-toggle {
+  position: fixed;
+  bottom: 68px;
+  right: 12px;
+  z-index: 45;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: linear-gradient(180deg, #1a1714, #0e0c0a);
+  border: 2px solid #2a2520;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.mobile-chat-drawer {
+  position: fixed;
+  bottom: 60px;
+  right: 0;
+  width: 100%;
+  max-width: 360px;
+  max-height: 50vh;
+  z-index: 44;
+  background: #0e0c0a;
+  border: 1px solid #1a1714;
+  border-radius: 16px 0 0 0;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Mobile character panel (top bar) ────────────────────── */
+.mobile-char-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: #0e0c0a;
+  border-bottom: 1px solid #1a1714;
+  font-size: 12px;
+}
+
+/* ─── Responsive visibility ──────────────────────────────── */
+@media (min-width: 769px) {
+  .mobile-only { display: none !important; }
+  .mobile-hp-bars { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
+
+  /* ── Layout ── */
+  .game-layout {
+    flex-direction: column !important;
+    height: 100dvh;
+  }
+
+  /* ── Hide right sidebar ── */
+  .sidebar-right {
+    display: none !important;
+  }
+
+  /* ── Hide desktop sidebar on mobile ── */
+  .sidebar-left {
+    display: none !important;
+  }
+
+  /* ── Main content spacing (room for quick bar) ── */
+  .main-content {
+    padding: 12px 12px 64px !important;
+  }
+
+  /* ── Header ── */
+  .game-header {
+    padding: 8px 12px !important;
+    flex-wrap: wrap;
+  }
+  .hide-mobile { display: none !important; }
+  .mobile-hp-bars { display: flex !important; }
+
+  /* ── Touch-friendly buttons ── */
+  .btn-game {
+    min-height: 44px;
+  }
+
+  .zone-btn {
+    min-height: 48px;
+    font-size: 15px !important;
+  }
+
+  /* ── Combat arena ── */
+  .combat-arena {
+    padding: 12px !important;
+  }
+
+  /* ── Cards ── */
+  .game-card {
+    padding: 10px !important;
+  }
+
+  /* ── Monster icon ── */
+  .monster-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 22px !important;
+  }
+
+  /* ── Show mobile chat toggle ── */
+  .mobile-chat-toggle {
+    display: flex;
+  }
+
+  /* ── Quick bar (fixed bottom) ── */
+  .quick-bar {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: #0e0c0a;
+    border-top: 1px solid #1a1714;
+  }
+  .qb-inner {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 0;
+  }
+  .qb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    font-size: 8px;
+    color: #78716c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    position: relative;
+  }
+  .qb.active { color: #d4a853; }
+  .qb .dot {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #dc2626;
+  }
+
+  /* ── Half-sheet overlay ── */
+  .hs-overlay {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 50;
+  }
+  .half-sheet {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 51;
+    background: #0e0c0a;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 55vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  }
+  .hs-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: #4b5563;
+    margin: 8px auto 4px;
+  }
+  .hs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 4px 8px;
+  }
+  .hs-sep {
+    padding: 6px 16px 2px;
+  }
+  .hs-sep span {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4b5563;
+    font-weight: 700;
+  }
+  .hs-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 12px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: none;
+  }
+  .hs-item:active { background: rgba(212,168,83,0.08); }
+  .hs-item.active { background: rgba(212,168,83,0.06); }
+  .hs-item .hi { font-size: 20px; }
+  .hs-item .hl { font-size: 9px; color: #8a8078; }
+  .hs-item.active .hl { color: #d4a853; }
+  .hs-item .hb {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 7px;
+    padding: 0 3px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+}
+
+/* ── Hide quick-bar and half-sheet on desktop ── */
+@media (min-width: 769px) {
+  .quick-bar, .hs-overlay, .half-sheet { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  /* Stats page */
+  .game-panel { overflow-x: auto; }
+
+  /* Tables */
+  table { font-size: 11px !important; }
+  table th, table td { padding: 4px 6px !important; }
+}

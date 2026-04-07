@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Crossed Swords (combat/fight) -->
+  <symbol id="icon-swords" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+    <path d="M13 19l6-6"/>
+    <path d="M16 16l4 4"/>
+    <path d="M19 21l2-2"/>
+    <path d="M9.5 6.5L21 18v3h-3L6.5 9.5"/>
+    <path d="M11 5l-6 6"/>
+    <path d="M8 8L4 4"/>
+    <path d="M5 3L3 5"/>
+  </symbol>
+
+  <!-- Shield (defense/armor) -->
+  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+
+  <!-- Heart (HP/health) -->
+  <symbol id="icon-heart" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+  </symbol>
+
+  <!-- Potion bottle -->
+  <symbol id="icon-potion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 2v4.5L6 14c-1.33 2.67-.67 5.33 2 6 2.67.67 5.33.67 8 0 2.67-.67 3.33-3.33 2-6L14 6.5V2"/>
+    <path d="M8.5 2h7"/>
+    <path d="M7 15h10"/>
+  </symbol>
+
+  <!-- Coin (gold) -->
+  <symbol id="icon-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 7v10" stroke-linecap="round"/>
+    <path d="M9.5 9.5c0-1.1 1.12-2 2.5-2s2.5.9 2.5 2-1.12 2-2.5 2-2.5.9-2.5 2 1.12 2 2.5 2 2.5-.9 2.5-2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Star (XP) -->
+  <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </symbol>
+
+  <!-- Skull (death/enemy) -->
+  <symbol id="icon-skull" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="10" r="7"/>
+    <path d="M9 14l-1 8h8l-1-8"/>
+    <circle cx="9.5" cy="9" r="1.5" fill="currentColor"/>
+    <circle cx="14.5" cy="9" r="1.5" fill="currentColor"/>
+    <path d="M10 13h4"/>
+  </symbol>
+
+  <!-- Backpack (inventory) -->
+  <symbol id="icon-backpack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 10v10a2 2 0 002 2h12a2 2 0 002-2V10"/>
+    <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+    <rect x="2" y="6" width="20" height="6" rx="2"/>
+  </symbol>
+
+  <!-- Crown (elite/boss) -->
+  <symbol id="icon-crown" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M2 18l3-10 4 5 3-8 3 8 4-5 3 10H2z"/>
+    <rect x="2" y="18" width="20" height="3" rx="1"/>
+  </symbol>
+
+  <!-- Scroll (quest) -->
+  <symbol id="icon-scroll" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 21h12a2 2 0 002-2v-2H10v2a2 2 0 01-2 2z"/>
+    <path d="M4 3h12a2 2 0 012 2v12a4 4 0 01-4 4H4a2 2 0 01-2-2V5a2 2 0 012-2z"/>
+    <path d="M6 8h8"/>
+    <path d="M6 12h6"/>
+  </symbol>
+
+  <!-- Gear/Settings -->
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+  </symbol>
+</svg>
